@@ -1,7 +1,7 @@
 <h1>Agregar Producto</h1>
 <hr>
 
-<form >
+<form [formGroup]="myForm" >
    
     <div class="row g-3 align-items-center nb-3">
 
@@ -10,7 +10,9 @@
         </div>
     
         <div class="col-auto">
-            <input type="text" class="form-control">
+
+            <input formControlName="name" type="text" class="form-control">
+
         </div>
     
         <div class="col-auto">
@@ -21,10 +23,18 @@
     <br>
     <div class="row">
         <div class="col">
-            <button class="btn btn-primary"> 
+            <button (click)="changeColor()" class="btn btn-primary"> 
                 Cambiar color
             </button>
         </div>
     </div>
 
 </form>
+
+
+<pre>
+    {{myForm.get('name')?.errors | json }}
+</pre>
+
+
+<p>color: {{color}}</p>
