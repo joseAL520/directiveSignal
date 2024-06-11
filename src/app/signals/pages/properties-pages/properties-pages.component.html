@@ -9,13 +9,15 @@
             type="text" 
             class="form-control mb-2"
             (input)="onFieldUpdate('email',txtEmail.value)"
+            [value]="user().email"
         >
          
         <input 
             #txtFirtsName
             type="text" 
             class="form-control mb-2"
-            (input)="onFieldUpdate('firts_name',txtFirtsName.value)"
+            (input)="onFieldUpdate('first_name',txtFirtsName.value)"
+            [value]="user().first_name"
         >
 
         <input 
@@ -23,6 +25,7 @@
             type="text" 
             class="form-control mb-2"
             (input)="onFieldUpdate('last_name',txtLastName.value)"
+            [value]="user().last_name"
         >
 
 
@@ -32,7 +35,7 @@
         <!-- data del usuaio -->
 
         <pre>
-            {{'asd'}}
+            {{ user() | json }}
         </pre>
     </div>
 </div>
